@@ -13,8 +13,7 @@ const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
     const [email, setEmail] = useState('')
     const [confirmation, setConfirmation] = useState('')
-    const [message, setMessage] = useState(''); 
-    const [popupVisible, setPopupVisible] = useState(false);
+    const [message, setMessage] = useState('');
 
 
 
@@ -30,7 +29,7 @@ const Contact = () => {
 
     };
 
-    const notify = () => toast("Message sent successfully!");
+    const notify = () => toast.success("Message sent successfully!");
 
     useEffect(() => {
 
@@ -49,18 +48,13 @@ const Contact = () => {
             confirmationError.current.style.display = 'none';
         }, 4000);
 
-
-
         return () => {
             clearTimeout(confirmationErrorTimeout);
 
         };
     }, [confirmation]);
 
-    const showPopup = () => {
-        setPopupVisible(true);
-        setTimeout(() => setPopupVisible(false), 6000);
-      };
+
 
 
     const handleSubmit = (e) => {
@@ -77,11 +71,10 @@ const Contact = () => {
             // messageError.current.style.display = 'none';
             e.preventDefault();
             setSubmitted(true);
-            showPopup();
             notify();
             console.log('Send Clicked');
-                         
-          
+
+
             setTimeout(() => {
                 window.location.reload();
             }, 10000);
@@ -196,7 +189,7 @@ const Contact = () => {
                     />
 
                 </div>
-                </div>
+            </div>
         </>
     )
 
