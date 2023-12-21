@@ -14,6 +14,9 @@ const Contact = () => {
     const [email, setEmail] = useState('')
     const [confirmation, setConfirmation] = useState('')
     const [message, setMessage] = useState(''); 
+    const [popupVisible, setPopupVisible] = useState(false);
+
+
 
     const confirmationError = useRef(null);
     const messageError = useRef(null);
@@ -54,6 +57,12 @@ const Contact = () => {
         };
     }, [confirmation]);
 
+    const showPopup = () => {
+        setPopupVisible(true);
+        setTimeout(() => setPopupVisible(false), 6000);
+      };
+
+
     const handleSubmit = (e) => {
         if (email !== confirmation) {
             e.preventDefault();
@@ -68,12 +77,14 @@ const Contact = () => {
             // messageError.current.style.display = 'none';
             e.preventDefault();
             setSubmitted(true);
+            showPopup();
             notify();
             console.log('Send Clicked');
-
+                         
+          
             setTimeout(() => {
                 window.location.reload();
-            }, 4500);
+            }, 10000);
 
         }
 
@@ -162,6 +173,7 @@ const Contact = () => {
                             >
                                 This field can not be empty
                             </p> : <div id="charCount">{charCount}/1000</div>}
+                            {submitted ? <div className="popup" id="popup">Thank you for using our contact form! For the most accurate assistance, please allow our team an estimated 2 business days to respond to your email.</div> : null}
 
 
                         </div>
@@ -173,7 +185,7 @@ const Contact = () => {
                     <ToastContainer
                         position="top-right"
                         autoClose={1500}
-                        hideProgressBar={false}
+                        hideProgressBar={true}
                         newestOnTop={false}
                         closeOnClick
                         rtl={false}
@@ -184,7 +196,7 @@ const Contact = () => {
                     />
 
                 </div>
-                {submitted ? <div className="footer">Thank you for using our contact form. For the most accurate assistance, please allow our team an estimated 2 business days to respond to your email.</div> : null}</div>
+                </div>
         </>
     )
 
