@@ -107,7 +107,7 @@ const Contact = () => {
                 <div className="header"><h1>Contact Us</h1></div>
                 <div className="sidebar">
                     <h2>Hi!</h2>
-                    <p>Would you like to ask something, give your feedback or share something with us? We are happy to hear from you!</p>
+                    <p>Would you like to ask something, give us your feedback or share something with us? We are happy to hear from you!</p>
                     <p className="promise"><sup className='asterisk'>*</sup>We will never share your personal information or your messages with anyone else.</p>
                 </div>
                 <div className="content">
@@ -173,7 +173,7 @@ const Contact = () => {
                             >
                                 This field can not be empty
                             </p> : <div id="charCount">{charCount}/1000</div>}
-                            {submitted ? <div className="popup" id="popup">Thank you for using our contact form! For the most accurate assistance, please allow our team an estimated 2 business days to respond to your email.</div> : null}
+                            {submitted ? <div className="popup" id="popup">Thank you for using our contact form! For the most accurate assistance, please allow an estimated 2 business days for our team to respond to your email.</div> : null}
 
 
                         </div>

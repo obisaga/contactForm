@@ -16,10 +16,10 @@ h1{
 
 .container {
   /* border: 3px solid #af6ab3; */
-  border-left:solid red 5px;
+  border-left:solid #07bc0c 5px;
     border-right:solid violet 5px;
     border-top:solid dodgerblue 5px;
-    border-bottom:solid #07bc0c 5px;
+    border-bottom:solid red 5px;
   border-radius: 0px;
   color: #f8f9fe;
   font-family: 'Raleway', sans-serif;
